@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="billingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1365.0" style="-fx-background-color: #f4f8fb;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BillingController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(to bottom, #1e3a8a, #2563eb);">
+         <children>
+            <Button fx:id="dashboardBtn" layoutX="65.0" layoutY="150.0" mnemonicParsing="false" onAction="#openDashboard" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Dashboard" />
+            <Button fx:id="patientsBtn" layoutX="75.0" layoutY="200.0" mnemonicParsing="false" onAction="#openPatients" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Patients" />
+            <Button fx:id="doctorsBtn" layoutX="77.0" layoutY="250.0" mnemonicParsing="false" onAction="#openDoctors" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Doctors" />
+            <Button fx:id="appointmentsBtn" layoutX="50.0" layoutY="300.0" mnemonicParsing="false" onAction="#openAppointments" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Appointments" />
+            <Button fx:id="billingBtn" layoutX="85.0" layoutY="350.0" mnemonicParsing="false" onAction="#openBilling" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Billing" />
+            <Button fx:id="logoutBtn" layoutX="85.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Logout" />
+         </children>
+      </Pane>
+      <Label layoutX="50.0" layoutY="50.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 28;" text="MediCare+" />
+      <Pane layoutX="260.0" layoutY="10.0" prefHeight="80.0" prefWidth="1090.0" style="-fx-background-color: white; -fx-background-radius: 40;">
+         <children>
+            <Label layoutX="360.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 30; -fx-text-fill: #03396c;" text="Billing Management" />
+         </children>
+      </Pane>
+      <AnchorPane fx:id="panel1" layoutX="275.0" layoutY="120.0" prefHeight="180.0" prefWidth="1060.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ff867c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="30.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: green;" text="Add a Bill" />
+            <Label layoutX="105.0" layoutY="65.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Patient" translateY="-5.0" />
+            <ComboBox fx:id="billingPatientComboBox" layoutX="75.0" layoutY="95.0" prefWidth="150.0" promptText="Select Patient" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-padding: 4;" translateY="-5.0" />
+            <Label layoutX="355.0" layoutY="65.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Service" translateY="-5.0" />
+            <Label layoutX="600.0" layoutY="65.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Amount" translateY="-5.0" />
+            <TextField fx:id="amountField" alignment="CENTER" layoutX="560.0" layoutY="94.0" prefWidth="180.0" promptText="e.g. 20 ($)" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #479f78,#46c34c); -fx-padding: 8;" translateY="-5.0" />
+            <Label layoutX="805.0" layoutY="65.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Payment Status" translateY="-5.0" />
+            <Button fx:id="addBillBtn" layoutX="50.0" layoutY="140.0" mnemonicParsing="false" onAction="#addBill" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Add" translateX="40.0" />
+            <Button fx:id="updateBillBtn" layoutX="300.0" layoutY="140.0" mnemonicParsing="false" onAction="#updateBill" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Update" translateX="40.0" />
+            <Button fx:id="deleteBillBtn" layoutX="550.0" layoutY="140.0" mnemonicParsing="false" onAction="#deleteBill" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Delete" translateX="40.0" />
+            <Button fx:id="clearBillBtn" layoutX="800.0" layoutY="140.0" mnemonicParsing="false" onAction="#clearBillFields" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Clear" translateX="40.0" />
+            <TextField fx:id="serviceField" alignment="CENTER" layoutX="310.0" layoutY="89.0" prefWidth="180.0" promptText="e.g. Surgery, Consultation" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #479f78,#46c34c); -fx-padding: 8;" />
+            <ComboBox fx:id="paymentStatusComboBox" layoutX="823.0" layoutY="91.0" prefWidth="150.0" promptText="Select Status" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: linear-gradient(to right, #479f78,#46c34c); -fx-padding: 4;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel2" layoutX="275.0" layoutY="330.0" prefHeight="350.0" prefWidth="1060.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ff867c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="30.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: green;" text="Billing Records" />
+            <TableView fx:id="billingTable" layoutX="20.0" layoutY="55.0" prefHeight="280.0" prefWidth="1020.0" stylesheets="@../styles/table4.css">
+               <columns>
+                  <TableColumn fx:id="billingIdColumn" text="ID" />
+                  <TableColumn fx:id="billingPatientColumn" prefWidth="280.0" text="Patient" />
+                  <TableColumn fx:id="serviceColumn" prefWidth="260.0" text="Service" />
+                  <TableColumn fx:id="amountColumn" prefWidth="207.0" text="Amount" />
+                  <TableColumn fx:id="paymentStatusColumn" prefWidth="211.0" text="Status" />
+               </columns>
+            </TableView>
+            <Label layoutX="600.0" layoutY="18.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-text-fill: #2e5668;" text="Search Bill" />
+            <TextField fx:id="billingSearchField" layoutX="700.0" layoutY="10.0" prefHeight="35.0" prefWidth="335.0" promptText="Search by Patient Name..." style="-fx-border-color: linear-gradient(to right, #479f78,#46c34c); -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 8;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

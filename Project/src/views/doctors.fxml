@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="doctorsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1365.0" style="-fx-background-color: #f4f8fb;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DoctorsController">
+   <children>
+      <Pane layoutX="260.0" layoutY="10.0" prefHeight="80.0" prefWidth="1090.0" style="-fx-background-color: white; -fx-background-radius: 40;">
+         <children>
+            <Label layoutX="370.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 30; -fx-text-fill: #03396c;" text="Doctor Management" />
+         </children>
+      </Pane>
+      <Pane prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(to bottom, #1e3a8a, #2563eb);">
+         <children>
+            <Button fx:id="dashboardBtn" layoutX="65.0" layoutY="150.0" mnemonicParsing="false" onAction="#openDashboard" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Dashboard" />
+            <Button fx:id="patientsBtn" layoutX="75.0" layoutY="200.0" mnemonicParsing="false" onAction="#openPatients" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Patients" />
+            <Button fx:id="doctorsBtn" layoutX="77.0" layoutY="250.0" mnemonicParsing="false" onAction="#openDoctors" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Doctors" />
+            <Button fx:id="appointmentsBtn" layoutX="50.0" layoutY="300.0" mnemonicParsing="false" onAction="#openAppointments" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Appointments" />
+            <Button fx:id="billingBtn" layoutX="85.0" layoutY="350.0" mnemonicParsing="false" onAction="#openBilling" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Billing" />
+            <Button fx:id="logoutBtn" layoutX="85.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: #0ecccc; -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 20; -fx-cursor: hand;" text="Logout" />
+         </children>
+      </Pane>
+      <Label layoutX="50.0" layoutY="50.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 28;" text="MediCare+" />
+      <AnchorPane fx:id="panel1" layoutX="275.0" layoutY="120.0" prefHeight="180.0" prefWidth="1060.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ff867c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="30.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #ff867c;" text="Add Doctor" />
+            <Label layoutX="85.0" layoutY="70.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Name" translateY="-5.0" />
+            <TextField fx:id="doctorNameField" alignment="CENTER" layoutX="30.0" layoutY="100.0" prefWidth="180.0" promptText="e.g. Syed Aayan" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #ff5858, #f857a6); -fx-padding: 8;" translateY="-5.0" />
+            <Label layoutX="243.0" layoutY="70.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Experience" translateY="-5.0" />
+            <TextField fx:id="experienceField" alignment="CENTER" layoutX="250.0" layoutY="100.0" prefWidth="120.0" promptText="e.g. 5 (In Years)" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #ff5858, #f857a6); -fx-padding: 8;" translateY="-5.0" />
+            <ComboBox fx:id="doctorGenderComboBox" layoutX="410.0" layoutY="100.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: linear-gradient(to right, #ff5858, #f857a6); -fx-padding: 4;" translateY="-5.0" />
+            <Label layoutX="440.0" layoutY="70.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Gender" translateY="-5.0" />
+            <Label layoutX="607.0" layoutY="70.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Specialization" translateY="-5.0" />
+            <TextField fx:id="specializationField" alignment="CENTER" layoutX="600.0" layoutY="100.0" prefWidth="180.0" promptText="e.g. Psychiatrist" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #ff5858, #f857a6); -fx-padding: 8;" translateY="-5.0" />
+            <Label layoutX="857.0" layoutY="70.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Contact" translateY="-5.0" />
+            <TextField fx:id="doctorContactField" alignment="CENTER" layoutX="820.0" layoutY="100.0" prefWidth="180.0" promptText="e.g. 03314456734" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: linear-gradient(to right, #ff5858, #f857a6); -fx-padding: 8;" translateY="-5.0" />
+            <Button fx:id="addDoctorBtn" layoutX="50.0" layoutY="140.0" mnemonicParsing="false" onAction="#addDoctor" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #ff5858, #f857a6); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Add" translateX="40.0" />
+            <Button fx:id="updateDoctorBtn" layoutX="300.0" layoutY="140.0" mnemonicParsing="false" onAction="#updateDoctor" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #ff5858, #f857a6); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Update" translateX="40.0" />
+            <Button fx:id="deleteDoctorBtn" layoutX="550.0" layoutY="140.0" mnemonicParsing="false" onAction="#deleteDoctor" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #ff5858, #f857a6); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Delete" translateX="40.0" />
+            <Button fx:id="clearDoctorBtn" layoutX="800.0" layoutY="140.0" mnemonicParsing="false" onAction="#clearDoctorFields" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #ff5858, #f857a6); -fx-text-fill: white; -fx-font-family: Montserrat; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Clear" translateX="40.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panel2" layoutX="275.0" layoutY="330.0" prefHeight="350.0" prefWidth="1060.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ff867c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="30.0" layoutY="20.0" style="-fx-font-family: Montserrat; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #ff867c;" text="Doctor Records" />
+            <TableView fx:id="doctorTable" layoutX="20.0" layoutY="55.0" prefHeight="280.0" prefWidth="1020.0" stylesheets="@../styles/table2.css">
+               <columns>
+                  <TableColumn fx:id="doctorIdColumn" text="ID" />
+                  <TableColumn fx:id="doctorNameColumn" prefWidth="280.0" text="Name" />
+                  <TableColumn fx:id="experienceColumn" prefWidth="120.0" text="Experience" />
+                  <TableColumn fx:id="doctorGenderColumn" prefWidth="100.0" text="Gender" />
+                  <TableColumn fx:id="specializationColumn" prefWidth="250.0" text="Specialization" />
+                  <TableColumn fx:id="doctorContactColumn" prefWidth="207.0" text="Contact" />
+               </columns>
+            </TableView>
+            <Label layoutX="565.0" layoutY="18.0" style="-fx-font-family: Montserrat; -fx-font-weight: bold; -fx-font-size: 16; -fx-text-fill: #2e5668;" text="Search Doctor" />
+            <TextField fx:id="doctorSearchField" layoutX="700.0" layoutY="10.0" prefHeight="35.0" prefWidth="335.0" promptText="Search by name..." style="-fx-border-color: linear-gradient(to right, #ff5858, #f857a6); -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 8;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
