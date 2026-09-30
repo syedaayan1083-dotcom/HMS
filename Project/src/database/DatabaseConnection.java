@@ -19,7 +19,7 @@ public class DatabaseConnection {
             String user = "postgres";
 
             // PASSWORD
-            String password = "Kpopfan2$";
+            String password = "PASSWORD";
 
             connection = DriverManager.getConnection(
                     url,
